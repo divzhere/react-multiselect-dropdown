@@ -1,0 +1,69 @@
+.kn-column__column___3Iwzx:nth-child(2) {
+  display: none;
+}
+
+.kn-multi_select__wrapper___30BEc {
+  float: left;
+  clear: both;
+}
+
+* {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-select-label::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  box-sizing: border-box;
+}
+
+.custom-select-toggle {
+  line-height: 1.5715;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  -webkit-box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+  box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 4px 15px;
+  font-size: 14px;
+  border-radius: 2px;
+  color: rgba(0, 0, 0, 0.85);
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+
+.custom-select-toggle:focus,
+.custom-select-toggle:hover {
+  color: #40a9ff;
+  background: #fff;
+  border-color: #40a9ff;
+}
+
+button:focus {
+  outline: none;
+}
+
+.custom-select {
+  display: inline-block;
+}

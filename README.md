@@ -1,2 +1,2 @@
-# react-multiselect-dropdown
+# CustomSelect
 Created with CodeSandbox
