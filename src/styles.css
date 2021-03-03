@@ -1,14 +1,20 @@
-.kn-column__column___3Iwzx:nth-child(2) {
+/* .kn-column__column___3Iwzx:nth-child(2) {
   display: none;
-}
+} */
 
 .kn-multi_select__wrapper___30BEc {
   float: left;
   clear: both;
 }
 
+.App {
+  padding: 5em;
+}
+
 * {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
 }
 
 .custom-select-label::after {
@@ -66,4 +72,111 @@ button:focus {
 
 .custom-select {
   display: inline-block;
+  position: absolute;
+}
+
+.top-nav {
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  background-color: transparent;
+}
+
+.header-text {
+  font-size: 2.5rem;
+  line-height: 110%;
+  margin: 2.8rem 0 1.68rem 0;
+}
+
+.caption span {
+  margin: 0 1px;
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+  background: #f2f4f5;
+  border: 1px solid #f0f0f0;
+  border-radius: 3px;
+}
+
+.caption a {
+  text-underline-position: under;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.caption {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.codebox {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 16px;
+  border: 1px solid #616161;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.codebox-demo {
+  padding: 42px 24px 50px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.codebox-meta {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 0 0 2px 2px;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+
+.codebox-title {
+  position: absolute;
+  top: -14px;
+  margin-left: 16px;
+  padding: 1px 8px;
+  background: #fff;
+  border-radius: 2px 2px 0 0;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.codebox-title .show-code-button {
+  width: 16px;
+  height: 16px;
+  color: rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  -webkit-transition: all 0.24s;
+  transition: all 0.24s;
+}
+
+.codebox-description {
+  padding: 18px 24px 12px;
+}
+
+.code-syntax {
+  margin: 1em;
+}
+
+.section-row {
+  display: flex;
+}
+
+table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  line-height: 2;
+  text-align: left;
 }
