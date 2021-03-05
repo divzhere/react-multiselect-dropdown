@@ -2,7 +2,13 @@ import React from "react";
 import CustomSelect from "./CustomSelect";
 import PropsTable from "./PropsTable";
 import ExampleSection from "./ExampleSection";
-import { BasicUsage, Searchable, SelectAll } from "./CodeSnippets";
+import {
+  BasicUsage,
+  Searchable,
+  SelectAll,
+  Height,
+  SelectedItems
+} from "./CodeSnippets";
 import "./styles.css";
 
 export default function Examples() {
@@ -44,7 +50,7 @@ export default function Examples() {
       </ExampleSection>
       <ExampleSection
         title="Height"
-        codeSnippet={BasicUsage}
+        codeSnippet={Height}
         description="responsiveHeight prop can be used to set height of Select Menu"
       >
         <CustomSelect
@@ -54,6 +60,21 @@ export default function Examples() {
           selectedItems={selectedItems}
           showSearch={false}
           responsiveHeight={200}
+        />
+      </ExampleSection>
+      <ExampleSection
+        title="Hide Selected Items"
+        codeSnippet={SelectedItems}
+        description="showSelectedItems prop can be used to show/hide selected items."
+      >
+        <CustomSelect
+          items={items}
+          showSelectAll={true}
+          label="Colors"
+          selectedItems={selectedItems}
+          showSearch={false}
+          responsiveHeight={200}
+          showSelectedItems={false}
         />
       </ExampleSection>
       <ExampleSection
