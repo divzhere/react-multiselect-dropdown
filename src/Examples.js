@@ -1,47 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import CustomSelect from "./CustomSelect";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { arta } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import PropsTable from "./PropsTable";
 import ExampleSection from "./ExampleSection";
+import { BasicUsage, Searchable, SelectAll } from "./CodeSnippets";
 import "./styles.css";
-
-const BasicUsage = `import React, { Component } from "react";
-import CustomSelect from "./CustomSelect";
-
-class Example extends Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = {
-      items: [
-        { id: 1, label: "Red" },
-        { id: 2, label: "Green" },
-        { id: 3, label: "Blue" },
-        { id: 4, label: "Yellow" }
-      ],
-      selectedItems: []
-    };
-  }
-
-  handleChange(selectedItems) {
-    this.setState({ selectedItems });
-  }
-  render() {
-    const { items, selectedItems } = this.state;
-    return (
-      <CustomSelect
-        label="Colors" 
-        items={items}
-        selectedItems={selectedItems}
-        onChange={this.handleChange}
-        showSelectedItems={false}
-        showSearch={false}
-      />
-    );
-  }
-}`;
 
 export default function Examples() {
   const items = [
@@ -50,21 +12,10 @@ export default function Examples() {
     { id: 2, label: "yellow" },
     { id: 3, label: "green" }
   ];
-  const [selectedItems, setSelected] = React.useState([]);
-
-  const [showCode, setShowCode] = React.useState(false);
+  const selectedItems = [];
 
   return (
     <div className="App">
-      {/* <CustomSelect
-        label={"Selected Items"}
-        items={items}
-        searchValue="1"
-        responsiveHeight={400}
-        showSearch={true}
-        showSelectAll={true}
-        showSelectedItems={false}
-      /> */}
       <nav className="top-nav">
         <h1 className="header-text">React-multiselect-dropdown</h1>
       </nav>
@@ -80,95 +31,77 @@ export default function Examples() {
         {"  "}
         as base component.
       </p>
-      <nav className="top-nav">
-        <h2>Props</h2>
-        <PropsTable />
-      </nav>
 
       <h2>Examples</h2>
       <ExampleSection title="Basic Usage" codeSnippet={BasicUsage}>
         <CustomSelect
           items={items}
+          showSelectAll={true}
           label="Colors"
           selectedItems={selectedItems}
-          showSelectedItems={false}
           showSearch={false}
         />
       </ExampleSection>
-      {/* <div className="section-row">
-        <section className="codebox">
-          <section className="codebox-meta">
-            <div className="codebox-title">
-              Basic Usage{" "}
-              <span
-                className="show-code-button"
-                onClick={() => {
-                  setShowCode(!showCode);
-                }}
-              >
-                {"</>"}
-              </span>
-            </div>
-          </section>
-          <section className="codebox-demo">
-            <CustomSelect
-              label={"Selected Items"}
-              items={items}
-              searchValue="1"
-              responsiveHeight={400}
-              showSearch={true}
-              showSelectAll={true}
-              maxSelectedItems={1}
-            />
-          </section>
-          <br></br>
-          {showCode && (
-            <SyntaxHighlighter
-              language="javascript"
-              style={arta}
-              className="code-syntax"
-            >
-              {MultiSelectExample}
-            </SyntaxHighlighter>
-          )}
-        </section>
-        <section className="codebox">
-          <section className="codebox-meta">
-            <div className="codebox-title">
-              Basic Usage{" "}
-              <span
-                className="show-code-button"
-                onClick={() => {
-                  setShowCode(!showCode);
-                }}
-              >
-                {"</>"}
-              </span>
-            </div>
-          </section>
-          <section className="codebox-demo">
-            <CustomSelect
-              label={"Selected Items"}
-              items={items}
-              searchValue="1"
-              responsiveHeight={400}
-              showSearch={true}
-              showSelectAll={true}
-              maxSelectedItems={1}
-            />
-          </section>
-          <br></br>
-          {showCode && (
-            <SyntaxHighlighter
-              language="javascript"
-              style={arta}
-              className="code-syntax"
-            >
-              {MultiSelectExample}
-            </SyntaxHighlighter>
-          )}
-        </section>
-      </div> */}
+      <ExampleSection
+        title="Height"
+        codeSnippet={BasicUsage}
+        description="responsiveHeight prop can be used to set height of Select Menu"
+      >
+        <CustomSelect
+          items={items}
+          showSelectAll={true}
+          label="Colors"
+          selectedItems={selectedItems}
+          showSearch={false}
+          responsiveHeight={200}
+        />
+      </ExampleSection>
+      <ExampleSection
+        title="Select with Search Field"
+        codeSnippet={Searchable}
+        description="showSearch prop can be used to enable/disable search. It is true by default"
+      >
+        <CustomSelect
+          items={items}
+          showSelectAll={false}
+          label="Colors"
+          selectedItems={selectedItems}
+          showSelectedItems={false}
+          responsiveHeight={200}
+        />
+      </ExampleSection>
+      <ExampleSection
+        title="Select with Select All"
+        codeSnippet={SelectAll}
+        description="showSelectAll prop can be used to Enable/disable Select All."
+      >
+        <CustomSelect
+          items={items}
+          showSelectAll={true}
+          label="Colors"
+          selectedItems={selectedItems}
+          showSearch={false}
+          responsiveHeight={200}
+        />
+      </ExampleSection>
+      <ExampleSection
+        title="Select with Multiselect"
+        codeSnippet={SelectAll}
+        description="maxSelectedItems prop can be used to enable/disable multiselect feature. When it is set to 1, multiselect of items in select is disabled. One can set other number then 1 as well."
+      >
+        <CustomSelect
+          items={items}
+          showSelectAll={true}
+          label="Colors"
+          selectedItems={selectedItems}
+          showSearch={true}
+          maxSelectedItems={1}
+        />
+      </ExampleSection>
+      <nav className="top-nav">
+        <h2>Props</h2>
+        <PropsTable />
+      </nav>
     </div>
   );
 }
