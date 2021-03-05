@@ -136,3 +136,11 @@ tr {
   line-height: 2;
   text-align: left;
 }
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+}
